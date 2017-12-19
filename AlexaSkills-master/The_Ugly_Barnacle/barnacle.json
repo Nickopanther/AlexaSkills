@@ -1,0 +1,50 @@
+{
+  "languageModel": {
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": [
+          "cancel",
+          "stop",
+          "no",
+          "nope ",
+          "no thank you"
+        ]
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": [
+          "help"
+        ]
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": [
+          "cancel",
+          "stop",
+          "no",
+          "nope",
+          "no thank you"
+        ]
+      },
+      {
+        "name": "UglyIntent",
+        "samples": [
+          "read the ugly barnacle",
+          "read to me the ugly barnacle",
+          "read me the ugly barnacle"
+        ],
+        "slots": []
+      },
+      {
+        "name": "YesIntent",
+        "samples": [
+          "yes",
+          "yeah"
+        ],
+        "slots": []
+      }
+    ],
+    "invocationName": "the ugly barnacle"
+  }
+}
