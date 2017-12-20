@@ -20,18 +20,18 @@ const factStrings = {
           "On the Titanic, the number of passangers onboard were more than two thousand. On the Titan, the number of passangers onboard were three thousand.",
           "On the Titanic, the number of displacement in tons were fifty two thousand three hundred ten. In the  eighteen ninety eight edition of the novella, Fuitility, the the number of displacement in tons were forty five thousand. In the ninteen twelve edition of the book, the number increased to seventy five thousand.",
           "On the Titanic, the Gross tonnage was forty six thousand three hundred twenty eight. On the Titan, the Gross tonnage was forty five thousand.",
-          "On the Titanic, the Horsepower was forty six thousand. In the  eighteen ninety eight edition of the novella, the Horsepower was forty thousand. In the ninteen twelve edition of the book, the horsepower was seventy five thousand.", "On the Titanic, the number of lifeboats were twenty. On the Titan, the number of lifeboats were twenty four.", "On the Titanic, the speed at the time of the collision was twenty two in a half knots. On the Titanic, the speed at the time of the collision was twenty five knots", "On the Titanic and the Titan, the month of the maiden voyage was in April.", "On the Titanic and the Titan, the side of the ship that struck the iceberg was the Starboard.",
+          "On the Titanic, the Horsepower was forty six thousand. In the eighteen ninety eight edition of the novella, the Horsepower was forty thousand. In the ninteen twelve edition of the book, the horsepower was seventy five thousand.", "On the Titanic, the number of lifeboats were twenty. On the Titan, the number of lifeboats were twenty four.", "On the Titanic, the speed at the time of the collision was twenty two in a half knots. On the Titanic, the speed at the time of the collision was twenty five knots", "On the Titanic and the Titan, the month of the maiden voyage was in April.", "On the Titanic and the Titan, the side of the ship that struck the iceberg was the Starboard.",
           "On the Titanic, the iceberg was struck at eleven forty p.m. On the Titan, the iceberg was struck near midnight with no specific time.", "On the Titanic, the destination was from England to New York. On the Titan, the destination was from New York to England.", "On the Titanic and the Titan, the location of the collision was at the North Atlantic, a few hundred miles off the U.S. Coast.", "On the Titanic, the warning was Iceberg right ahead. On the Titan, the warning was Ice, ice ahead. Iceberg, right under the bows.", "On the Titanic, the ship's headquarters was the British registry but it was owned by the U.S. On the Titan, the ship's headquarters was a British Company in Liverpool.", "On the Titanic and the Titan, the ship's owners U.S. location was in New York", "On the Titanic, the number of deaths were more than one thousand five hundred. On the Titan, the number of deaths were two thousand nine hundred eighty seven."
       ],
 
-        }
-    }
-}
+    },
+  },
+};
 
 var handlers = {
   'LaunchRequest': function() {
-    this.response.speak("Welcome to The Titanic vs The Titan. By telling me to pick a fact, you will receive a comparison between the real 1912 Titanic and the fictional ship, the Titan from an 1898 novella published by Morgan. Let's get started. Just say, pick a fact.").listen();
-      
+    this.response.speak("Welcome to The Titanic vs The Titan.").listen();
+
     this.emit(':responseReady');
   },
 
@@ -47,15 +47,9 @@ var handlers = {
 
     // Create speech output
     const speechOutput = randomFact;
-    this.emit(':tellWithCard', speechOutput, this.t('SKILL_NAME'), randomFact);
+    this.emit(':tellWithCard', speechOutput, randomFact);
 
 
-},
-
-// Yes
-'YesIntent': function () {
-    this.response.speak("Ok, what would you like me to lookup next?").listen();
-    this.emit(":responseReady");
 },
 
 // Help
@@ -75,7 +69,7 @@ var handlers = {
     this.response.speak("Ok, see you next time. And remember, gotta catch 'em all.");
     this.emit(':responseReady');
 }
-}
+};
 
 exports.handler = function (event, context) {
     var alexa = Alexa.handler(event, context);

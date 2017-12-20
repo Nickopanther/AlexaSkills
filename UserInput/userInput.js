@@ -7,10 +7,7 @@ var Alexa = require("alexa-sdk");
 
 var handlers = {
   'HelloIntent': function() {
-    this.response.speak("Hello, its very nice to meet you. Tell me something, what is your name?").listen(questionOne).
-    ("What is your age?").listen(questionTwo).("What is your favorite food?").listen(questionThree).
-    ("What is your favorite color?").listen(questionFour).
-    ("What is your quest?").listen(questionFive);
+    this.response.speak("Hello, its very nice to meet you. Tell me something, what is your name?").listen(questionOne);
     this.emit(":responseReady");
   },
 
@@ -22,6 +19,10 @@ var handlers = {
   var questionFive = "";
   var answer = questionOne + questionTwo + questionThree + questionFour +
                questionFive;
+
+if(questionOne == questionOne) {
+  this.response.speak("What is your age?");
+}
 
 if(answer = true) {
   this.response.speak("Your name is " + questionOne + ". Your " + questionTwo +
